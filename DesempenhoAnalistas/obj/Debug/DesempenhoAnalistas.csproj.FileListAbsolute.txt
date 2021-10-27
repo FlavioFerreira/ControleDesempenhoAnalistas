@@ -1,0 +1,13 @@
+C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\bin\Debug\DesempenhoAnalistas.exe.config
+C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\bin\Debug\DesempenhoAnalistas.exe
+C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\bin\Debug\DesempenhoAnalistas.pdb
+C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\obj\Debug\DesempenhoAnalistas.csproj.AssemblyReference.cache
+C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\obj\Debug\DesempenhoAnalistas.Properties.Resources.resources
+C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\obj\Debug\DesempenhoAnalistas.csproj.GenerateResource.cache
+C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\obj\Debug\DesempenhoAnalistas.csproj.CoreCompileInputs.cache
+C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\obj\Debug\DesempenhoAnalistas.exe
+C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\obj\Debug\DesempenhoAnalistas.pdb
+C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\obj\Debug\DesempenhoAnalistas.Login.resources
+C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\bin\Debug\System.Windows.Forms.Ribbon35.dll
+C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\obj\Debug\DesempenhoAnalistas.MenuPrincipal.resources
+C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\obj\Debug\DesempenhoAnalistas.csproj.CopyComplete
