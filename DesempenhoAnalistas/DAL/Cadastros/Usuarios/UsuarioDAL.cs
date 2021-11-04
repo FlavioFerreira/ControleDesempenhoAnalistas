@@ -7,52 +7,81 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesempenhoAnalistas.UTIL;
+using System.Data.SqlClient;
 
 namespace DesempenhoAnalistas.DAL.Cadastros.Usuarios
 {
     public class UsuarioDAL
     {
-        ConexaoDAL conexaoDAL;
+        Conexao conexao;
 
-        NpgsqlCommand cmd;
+        SqlCommand cmd;
 
-        NpgsqlDataReader dr;
+        String sql;
 
-        public void ValidaLoginUsuario(UsuarioDTO usuarioDTO)
+        String msg;
+
+        UsuarioDTO Usuario;
+
+        public UsuarioDAL(UsuarioDTO _Usuario)
         {
-            conexaoDAL = new ConexaoDAL(DadosConexaoDAL.StringConexaoLocal);
-
-            cmd = new NpgsqlCommand();
-
-            try
-            {
-                cmd.CommandText = "SELECT login, senha FROM Usuarios where login = '"+
-                    usuarioDTO.Login +  "' AND Senha = '"+ usuarioDTO.Senha +"'";
-
-                cmd.Connection = conexaoDAL.ObjetoConexao;
-
-                conexaoDAL.Conectar();
-
-                dr = cmd.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    usuarioDTO.Login = Convert.ToString(dr["Login"]);
-                    usuarioDTO.Senha = Convert.ToString(dr["Senha"]);
-
-                    return;
-                }
-            }
-            catch (NpgsqlException)
-            {
-                MessageBox.Show(MensagensUTIL.MsgErroConectarBD, "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conexaoDAL.Desconectar();
-            }
+            this.Usuario = _Usuario;
         }
 
 
+        public int Grava()
+        {
+            conexao = new Conexao();
+
+            cmd = new SqlCommand();
+
+            try
+            {
+                conexao.Abre_Conexao();
+
+                if(Usuario.IdUsuario == 0)
+                {
+                    sql = "INSERT INTO Usuario ";
+                    sql += "(Nome_Usuario, Login, Senha, StAtivo) ";
+                    sql += "VALUES";
+                    sql += "@Nome_Usuario, @Login, @Senha, @StAtivo ";
+                    cmd.CommandText = sql;
+                    cmd.Parameters.AddWithValue("@Nome_Usuario", Usuario.NomeUsuario);
+                    cmd.Parameters.AddWithValue("@Login", Usuario.Login);
+                    cmd.Parameters.AddWithValue("@Senha", Usuario.Senha);
+                    cmd.Parameters.AddWithValue("@StAtivo", Usuario.StAtivo);
+
+                    Usuario.IdUsuario = conexao.Executa_ComandoID(cmd);
+                }
+                else
+                {
+                    sql = "UPDATE ";
+                    sql += "Usuario SET ";
+                    sql += "Nome_Usuario = @Nome_Usuario, ";
+                    sql += "Login = @Login, ";
+                    sql += "Senha = @Senha, ";
+                    sql += "StAtivo = @StAtivo ";
+                    sql += "WHERE ";
+                    sql += "IdUsuario = @IdUsuario ";
+                    cmd.CommandText = sql;
+                    cmd.Parameters.AddWithValue("@IdUsuario", Usuario.IdUsuario);
+                    cmd.Parameters.AddWithValue("@Nome_Usuario", Usuario.NomeUsuario);
+                    cmd.Parameters.AddWithValue("@Senha", Usuario.Senha);
+                    cmd.Parameters.AddWithValue("@StAtivo", Usuario.StAtivo);
+
+                    conexao.Executa_Comando(cmd);
+                }
+
+                return Usuario.IdUsuario;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                conexao.Fecha_Conexao();
+            }
+        }
     }
 }
