@@ -1,7 +1,7 @@
 ﻿
 namespace DesempenhoAnalistas
 {
-    partial class MenuPrincipal
+    partial class frmMenuPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -29,15 +29,15 @@ namespace DesempenhoAnalistas
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
             this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
-            this.ribbonTab3 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
             this.ribbonButton2 = new System.Windows.Forms.RibbonButton();
+            this.ribbonTab3 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
             this.ribbonButton3 = new System.Windows.Forms.RibbonButton();
             this.SuspendLayout();
@@ -122,17 +122,6 @@ namespace DesempenhoAnalistas
             this.ribbonTab2.ToolTipTitle = null;
             this.ribbonTab2.Value = null;
             // 
-            // ribbonTab3
-            // 
-            this.ribbonTab3.Panels.Add(this.ribbonPanel3);
-            this.ribbonTab3.Tag = null;
-            this.ribbonTab3.Text = "Importações";
-            this.ribbonTab3.ToolTip = null;
-            this.ribbonTab3.ToolTipIcon = System.Windows.Forms.ToolTipIcon.None;
-            this.ribbonTab3.ToolTipImage = null;
-            this.ribbonTab3.ToolTipTitle = null;
-            this.ribbonTab3.Value = null;
-            // 
             // ribbonPanel2
             // 
             this.ribbonPanel2.Items.Add(this.ribbonButton2);
@@ -155,6 +144,17 @@ namespace DesempenhoAnalistas
             this.ribbonButton2.ToolTipTitle = null;
             this.ribbonButton2.Value = null;
             // 
+            // ribbonTab3
+            // 
+            this.ribbonTab3.Panels.Add(this.ribbonPanel3);
+            this.ribbonTab3.Tag = null;
+            this.ribbonTab3.Text = "Importações";
+            this.ribbonTab3.ToolTip = null;
+            this.ribbonTab3.ToolTipIcon = System.Windows.Forms.ToolTipIcon.None;
+            this.ribbonTab3.ToolTipImage = null;
+            this.ribbonTab3.ToolTipTitle = null;
+            this.ribbonTab3.Value = null;
+            // 
             // ribbonPanel3
             // 
             this.ribbonPanel3.Items.Add(this.ribbonButton3);
@@ -176,16 +176,17 @@ namespace DesempenhoAnalistas
             this.ribbonButton3.ToolTipTitle = null;
             this.ribbonButton3.Value = null;
             // 
-            // MenuPrincipal
+            // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.ribbon1);
-            this.Name = "MenuPrincipal";
+            this.Name = "frmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Controle de Desempenho dos Analistas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.ResumeLayout(false);
 
         }

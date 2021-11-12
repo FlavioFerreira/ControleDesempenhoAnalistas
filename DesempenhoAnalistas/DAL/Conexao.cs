@@ -21,7 +21,7 @@ namespace DesempenhoAnalistas.DAL
         {
             try
             {
-                conexao = new SqlConnection("Data Source=FLAVIO-PC\SQLEXPRESS;Initial Catalog=CDA;User ID=sa;Password=123456");
+                conexao = new SqlConnection(@"Data Source=FLAVIO-PC\SQLEXPRESS;Initial Catalog=CDA;User ID=sa;Password=123456");
                 conexao.Open();
                 cmd = conexao.CreateCommand();
                 cmd.CommandText = "SET LANGUAGE PORTUGUESE";

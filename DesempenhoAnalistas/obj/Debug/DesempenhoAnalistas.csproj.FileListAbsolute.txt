@@ -9,7 +9,6 @@ C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\obj\Debug\D
 C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\obj\Debug\DesempenhoAnalistas.pdb
 C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\obj\Debug\DesempenhoAnalistas.Login.resources
 C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\bin\Debug\System.Windows.Forms.Ribbon35.dll
-C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\obj\Debug\DesempenhoAnalistas.MenuPrincipal.resources
 C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\bin\Debug\Npgsql.dll
 C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\bin\Debug\System.Buffers.dll
@@ -32,3 +31,7 @@ C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\bin\Debug\S
 C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\bin\Debug\System.Threading.Channels.xml
 C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\bin\Debug\System.ValueTuple.xml
+C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\obj\Debug\DesempenhoAnalistas.frmMenuPrincipal.resources
+C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\bin\Debug\linq2db.dll
+C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\bin\Debug\linq2db.xml
+C:\Users\Flavio\source\repos\DesempenhoAnalistas\DesempenhoAnalistas\obj\Debug\DesempenhoAnalistas.csproj.CopyComplete

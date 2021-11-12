@@ -27,5 +27,9 @@ namespace DesempenhoAnalistas.UTIL
         public static string MsgEncerrarSistema = "Deseja encerrar o sistema?";
         public static string MsgTrocarUsuario = "Deseja trocar de usuário?";
         //public static string Msg = "";
+
+        //Mensagens de Erros Diversos
+        public static string msg_Erro_Usuario_Senha_Nulo = "Usuário e/ou senha não informados!";
+        public static string msg_Erro = "Ocorreu um erro!\n";
     }
 }

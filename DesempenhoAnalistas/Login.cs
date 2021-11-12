@@ -21,40 +21,41 @@ namespace DesempenhoAnalistas
         }
 
         UsuarioBLL usuarioBLL;
-
         UsuarioDTO usuarioDTO;
 
         string mensagem = string.Empty;
 
-        public void ValidaLoginUsuario()
+        public void Inicia_Acesso()
         {
-            usuarioBLL = new UsuarioBLL();
-            usuarioDTO = new UsuarioDTO();
-
             try
             {
+                frmMenuPrincipal frmMenuPrincipal;
+
+            if(string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtSenha.Text))
+            {
+                MessageBox.Show(MensagensUTIL.msg_Erro_Usuario_Senha_Nulo, this.Text);
+                txtUsuario.Focus();
+
+                return;
+            }
+
+                usuarioBLL = new UsuarioBLL();
+                usuarioDTO = new UsuarioDTO();
+
                 usuarioDTO.Login = txtUsuario.Text;
                 usuarioDTO.Senha = txtSenha.Text;
 
-                usuarioBLL.ValidaLoginUsuario(usuarioDTO);
+                frmMenuPrincipal = new frmMenuPrincipal();
+                frmMenuPrincipal.Show();
+                this.Hide();
 
-                if(usuarioDTO.Login == txtUsuario.Text && usuarioDTO.Senha == txtSenha.Text)
-                {
-                    MessageBox.Show("Login efetuado!", "Mensagem do sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide();
-                    MenuPrincipal Principal = new MenuPrincipal();
-                    Principal.ShowDialog();
+                txtUsuario.Clear();
+                txtSenha.Clear();
 
-                    
-                }
-                else
-                {
-
-                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Mensagem do sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(MensagensUTIL.msg_Erro + ex.Message, this.Text);
             }
         }
 
@@ -66,12 +67,17 @@ namespace DesempenhoAnalistas
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            ValidaLoginUsuario();
+            Inicia_Acesso();
         }
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

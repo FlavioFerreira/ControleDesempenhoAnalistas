@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace DesempenhoAnalistas
 {
-    public partial class MenuPrincipal : Form
+    public partial class frmMenuPrincipal : Form
     {
-        public MenuPrincipal()
+        public frmMenuPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

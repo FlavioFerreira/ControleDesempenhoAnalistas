@@ -83,5 +83,34 @@ namespace DesempenhoAnalistas.DAL.Cadastros.Usuarios
                 conexao.Fecha_Conexao();
             }
         }
+
+        public void Exclui()
+        {
+            conexao = new Conexao();
+            cmd = new SqlCommand();
+            msg = string.Empty;
+
+            try
+            {
+                conexao.Abre_Conexao();
+
+                sql = "DELETE FROM ";
+                sql += "Usuario ";
+                sql += "WHERE ";
+                sql += "IdUsuario = @IdUsuario ";
+                cmd.CommandText = sql;
+                cmd.Parameters.AddWithValue("@ID", Usuario.IdUsuario);
+
+                conexao.Executa_Comando(cmd);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                conexao.Fecha_Conexao();
+            }
+        }
     }
 }

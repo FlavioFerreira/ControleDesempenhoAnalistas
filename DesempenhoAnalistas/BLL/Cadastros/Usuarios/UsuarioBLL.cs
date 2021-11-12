@@ -11,31 +11,22 @@ namespace DesempenhoAnalistas.BLL.Cadastros.Usuarios
 {
     public class UsuarioBLL
     {
-        UsuarioDAL usuarioDAL;
-
-        string mensagem = string.Empty;
-
-        public void ValidaLoginUsuario(UsuarioDTO usuarioDTO)
+        public int Grava(UsuarioDTO _Usuario)
         {
-            usuarioDAL = new UsuarioDAL();
+            string msg = string.Empty;
 
-            if(usuarioDTO.NomeUsuario == string.Empty)
-            {
-                mensagem += MensagensUTIL.MsgCampoUsuarioObrigatorio;
-            }
-            else if(usuarioDTO.Senha == string.Empty)
-            {
-                mensagem += MensagensUTIL.MsgCampoSenhaObrigatorio;
-            }
-            if(mensagem != string.Empty)
-            {
-                throw new Exception(mensagem);
-            }
-            else
-            {
-                usuarioDAL.ValidaLoginUsuario(usuarioDTO);
-            }
-            
+            if (_Usuario.Login == string.Empty)
+                msg += "Login \n";
+
+            if (_Usuario.NomeUsuario == string.Empty)
+                msg += "Nome do Usuário \n";
+
+            if (_Usuario.Senha == string.Empty)
+                msg += "Senha \n";
+
+            UsuarioDAL obj = new UsuarioDAL(_Usuario);
+            return obj.Grava();
+
         }
     }
 }
